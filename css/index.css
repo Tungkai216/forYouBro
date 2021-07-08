@@ -1,0 +1,270 @@
+body{
+	background-color: lightgreen;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	z-index: 1;
+	
+}
+
+p#demo{
+	position: absolute;
+	color: white;
+}
+
+button.tombol{
+	position: absolute;
+	z-index: 999;
+	background-color: lightgreen;
+}
+
+@font-face{
+	font-family: "Metropolis-Black";
+	src: url(../font/Metropolis-Black.otf)format('opentype');
+}
+
+/*Header*/
+	.header{
+		display: inline-block;
+		position:fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 2;
+		padding: 20px 32px;
+		transform: translate(-50%, -50%);
+		font-family: Metropolis-Black, arial;
+		color: #fff;
+		cursor: pointer;
+		background-color:transparent;
+		margin-left: -120px;
+		
+		
+		
+
+	}
+
+	.you{
+		display: inline-block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 2;
+		padding: 20px 32px ;
+		transform: translate(-50%, -50%);
+		font-family: Metropolis-Black, arial;
+		color: #fff;
+		cursor: pointer;
+		margin-left:  200px;
+		
+		
+		
+	}
+
+	h1{
+		font-size: 5.5em;
+		transition: .5s;
+		float: left;
+		margin-left: 25px	;
+
+
+	}
+
+	h1:hover{
+		font-size: 6.5em;
+		text-shadow: 0px 30px 10px rgba(0, 0, 0, .3);
+		
+
+	}
+
+	.you:hover~ .bg1{
+		opacity: 0;
+	}
+
+	.you:hover ~ .bg2{
+		opacity: 10;
+	}
+
+
+	.bg1,
+	.bg2{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		transform: opacity 1s;
+	}
+
+
+	.bg1{
+		background-image: linear-gradient(to bottom, lightgreen 10%, springgreen 50%);
+		background-size: cover;
+		background-position: center;
+		opacity: 10;
+		transition: 1s;
+		
+	}
+
+	.bg1 #snow_fall{
+		background-image: linear-gradient(to bottom, lightgreen 10%, springgreen 50%);
+		background-size: cover;
+		background-position: center;
+		opacity: 10;
+		transition: 1s;
+		
+	}
+
+	.bg2{
+		
+		background-image: url(../img/img4.jpg);
+		background-position: center;
+		background-size: cover	;
+		opacity: 0;
+		transition: 1s;
+
+	}
+/*Navbar*/
+
+/*Navbar*/
+			.navbar{
+			position: fixed;
+			background-color:rgba(0, 0, 0, .25);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 55px;
+			z-index: 3;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.navbar ul li  {
+			float: left;
+		}
+		.btn{
+			margin-left: 30px;
+			margin-right: 25px;
+			transition: ease-out .5s;
+			
+		}
+
+		.btn a{
+			font-size: 2em;
+			font-family: Metropolis-Black;
+			text-decoration: none;
+			color: whitesmoke;
+
+		}
+
+		.satu a{
+			position: relative;
+			color: rgba(0, 0, 0,.5);
+			transition: .5s;
+		}
+
+		.satu a::before{
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .9s;			
+		    color: #fff;
+		}
+
+		.satu a:hover::before{
+			width: 100px;
+		}
+
+		.satu a span{
+			transition: .5s;
+		}
+
+		
+
+
+
+		.dua a{
+			position: relative;
+			color: rgba(0, 0, 0,.5);
+			transition: .5s;
+		}
+
+		.dua a::before{
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .9s;			
+		    color: #fff;
+		}
+
+		.dua a:hover::before{
+			width: 100px;
+		}
+
+		.dua a span{
+			transition: .5s;
+		}
+
+		
+
+
+		.tiga a{
+			position: relative;
+			color: rgba(0, 0, 0,.5);
+			transition: .5s;
+		}
+
+		.tiga a::before{
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .9s;			
+		    color: #fff;
+		}
+
+		.tiga a:hover::before{
+			width: 100px;
+		}
+
+		.tiga a span{
+			transition: .5s;
+		}
+
+/*footer*/
+.footer {
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 50px;
+   background: transparent;
+   color: white;
+   text-align: center;
+   font-family: Metropolis-Black;
+   z-index: 2;
+}
+
+		
+	
+
+
+
+
+
+

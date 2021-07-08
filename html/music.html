@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/music.css">
+    <link rel="stylesheet" href="../css/transition-1.css">
+</head>
+<body>
+
+    <div class="transition transition-3 is-active"></div>
+
+<div class="music-container">
+    <div class="navbar">
+            <ul>
+            <li class="btn satu"><a href="index.html" data-text='HoMe'>HoMe</a></li>
+            <li class="btn dua"><a href="pancake time.html" data-text="Mail">Mail</a></li>
+            <li class="btn tiga"><a href="#" data-text='Music'>Music</a></li>
+        </ul>
+        </div>
+    
+
+    <div class="main">
+        <p id="logo"><i class="fa fa-music" aria-hidden="true"></i>Music</p>
+
+
+        <!-- left part -->
+        <div class="left">
+
+            <!-- song image -->
+            <div id="circle"></div>
+            <div id="circle2"></div>
+            <img id="track_image">
+            <div class="volume">
+            <p id="volume_show">90</p>
+
+            <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+            <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+
+
+        </div>
+        </div>
+
+
+    <!-- right part -->
+    <div class="right">
+        <div class="show_song_no">
+            <p id="present">1</p>
+            <p>/</p>
+            <p id="total">6</p>
+        </div>
+
+        <!-- song title -->
+        <p id="title">title.mp3</p>
+        <p id="artist">Artist Name</p>
+        <p id="quote">Your quote</p>
+
+        <!-- middle part -->
+        <div class="middle">
+            <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+            <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+        </div>
+
+        <!-- song duration part -->
+        <div class="duration">
+            <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+        </div>
+        <button id="auto" onclick="autoplay_switch()">Auto play<i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+</div>
+
+    </div>
+
+</div>
+<!-- Add javascript file-->
+<script type="text/javascript" src="../js/msc.js"></script>
+<script src="../js/transition.js">    </script>
+</body>
+</html>

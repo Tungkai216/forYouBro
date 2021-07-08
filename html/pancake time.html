@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pancake Time</title>
+	<link rel="stylesheet" href="../css/transition-1.css">
+	<style>
+
+
+	
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+
+
+		}
+
+		/*Body, Font-face, and Container*/
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background-image: linear-gradient(to bottom, #ffb833 57%,  #ffaf1a 50%);
+
+			
+			
+		}
+
+		@font-face{
+	font-family: "Metropolis-Black";
+	src: url(../font/Metropolis-Black.otf)format('opentype');
+}
+
+		.container{
+			position: fixed;
+			width: 500px;
+			height: 500px;
+			background-color: transparent;
+			border-radius: 50%;
+
+			
+			
+
+
+		}
+
+		/*End of Body, Font-face, and Container */
+
+
+
+
+
+
+
+		/*Pancake & Shadow*/
+
+		
+		.pancake{
+			width: 300px;
+			height: 300px;
+			background-image: url(../img/img5.png);
+			background-size: cover;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) ;
+			z-index: 2;
+			transition: .5s;
+
+			
+			
+		}
+
+		.pancake:active{
+			transform: translate(-50%,-50%) rotate(-65deg); 
+			margin-left: -150px;
+
+			
+		}
+
+
+		
+
+		.shadow{
+			position: absolute;
+			width: 280px;
+			height: 280px;
+			background-image: url(../img/img5.png);
+			background-size: cover;
+			filter: brightness(0) opacity(40%);
+			top: 50%;
+			left: 80%;
+			margin-left: -45px;
+			transform: translate(-50%,-50%)  skew(-5deg) ;
+			z-index: 1;
+			transition: .5s;
+
+		}
+
+		/*End of Pancake & Shadow*/
+
+
+		/*Plate*/
+		
+		.plate{
+			position: absolute;
+			width: 350px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: white;
+			top: 50%;
+			left: 50%;
+			margin-top: 70px;
+			transform: translate(-50%, -50%);
+			box-shadow: 30px 10px 5px  rgba(0, 0, 0, .8) ;
+			z-index: 1;
+			text-align: center;
+			line-height: 100px;
+
+
+		}
+
+		.plate::before{
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+			border-radius: 50%;
+			background: linear-gradient(to left, #f9f9f9, rgba(0,0,0,.1));
+			transform: rotate(180deg);
+			
+			
+		}
+
+		.plate::after{
+			content: '';
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			right: 30px;
+			bottom: 30px;
+			background: radial radial-gradient(rgba(0,0,0,.9) 25%, transparent);
+		}
+		/*End of Plate*/
+
+
+
+		/*Mail*/
+		.mail{
+			position: absolute;
+			width: 150px;
+			height: 100px;
+			background: linear-gradient(to right, #f9f9f9 95% , rgba(0,0,0, .8) );
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) perspective(10px) rotateX(1deg)  ;
+			margin-top: 200px;
+			z-index: 3;
+			transition: .5s;
+			font-family: sans-serif;
+			box-shadow: 5px 0px 5px rgba(0, 0, 0, .8);
+			display: flex;
+			align-items: flex;
+			justify-content: center;
+
+		}
+
+		.mail:hover{
+			box-shadow: 15px 25px 5px rgba(0, 0, 0, .8);
+			transform: scale(1.5) translateX(-50px) translateY(-40px);
+
+
+
+		}
+
+		.mail a span{
+			position: absolute;
+			top: 50%;
+			left: 50%;	
+			transform: translate(-50%,-50%);
+			font-family: Metropolis-Black;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+			text-decoration: none;
+			color: black;
+		}
+
+		.mail:active span{
+			color: 	#ffb833;
+		}
+
+		.mail h1{
+			font-size: 12px;
+			font-family: inherit;
+			opacity: 1;
+			z-index: 2;
+			margin-top: 75px;
+			opacity: 0;
+			transition: .5s ;
+		}
+
+		.mail:hover h1{
+			opacity: 1;
+		}
+		/*End of Mail*/
+
+
+
+
+
+		/*Fork*/
+		.fork{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%)  perspective(10px) rotateX(5deg) ;
+			width: 30px;
+			height: 100.5px;
+			background-image: url(../img/forksss.png);
+			background-color: transparent;
+			background-size: cover;
+			filter: drop-shadow(10px 0px 5px rgba(0,0,0,.8) );
+			margin-left: -200px;
+			margin-top: 180px;
+			z-index: 3;
+			transition:  .5s;
+  			
+
+		}
+
+		.fork:hover{
+			transform: scale(2) rotate(-15deg);
+			 
+		}
+
+		.fork:hover h1{
+			opacity: 1;
+		}
+
+		.fork h1{
+			font-size: 12px;
+			z-index: 2;
+			text-align: left;
+			margin-left: -70px;
+			opacity: 0;
+			transition: 0.35s;
+		}
+		/*End of Fork*/
+
+
+
+
+		/*Knife*/
+		.knife{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%)  perspective(10px) rotateX(5deg) ;
+			width: 30px;
+			height: 100.5px;
+			background-image: url(../img/knifesss.png);
+			background-color: transparent;
+			background-size: cover;
+			filter: drop-shadow(10px 0px 5px rgba(0,0,0,.8) );
+			margin-left: 200px;
+			margin-top: 180px;
+			z-index: 3;
+			transition:  .5s;
+		}
+
+		.knife:hover{
+			transform: scale(2) rotate(15deg) ;
+
+		}
+
+		.knife:hover h1{
+			opacity: 1;
+		}
+
+		.knife h1{
+			font-size: 12px;
+			z-index: 2;
+			text-align: left;
+			margin-right: -70px;
+			transform: translatex(30px);
+			opacity: 0;
+			transition: 0.35s;
+		}
+		/*End of Knife*/
+
+
+
+		/*Link image of Fork & Knife*/
+		.atribut{
+			position: absolute;
+			left: 1112%;
+		}
+		/*End of Link*/
+
+
+
+
+		/*Text*/
+		.text{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 7em;
+			transition: .5s;
+			color: rgba(0, 0, 0, .1);
+			text-transform: uppercase;
+			margin-top: -1px;
+			font-family: Metropolis-Black;
+			
+
+		}
+
+		.text h2 .span{
+			font-size: 100px;
+			z-index: 1;
+
+
+		}
+
+		h2{
+			outline: none;
+		}
+
+		.text span::before{
+			content: '';
+			animation: animate infinite 7s;
+
+		}
+		/*End of Text*/
+
+
+
+
+
+		
+		/*Overlay*/
+			.overlay{
+				width: auto;	
+				height: auto;	
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0,0);
+				z-index: 10;
+				color: 	coral;
+				transition: .5s;
+
+			}
+
+			.overlay:target{
+				width: auto;	
+				height: auto;	
+				bottom: 0;
+				right: 0;
+				background-color: rgba(	 0, 0, 0, .8);
+			}
+
+			.overlay:target .mail a span{
+				animation: fadeajah 1s;
+			}
+
+			.overlay .paragraph{
+					max-height: 100%;
+
+			}
+
+			
+
+			.overlay:target .paragraph{
+				animation: fadeajah 1s forwards;
+			}
+
+			.overlay:target .close {
+				animation: fadeajah 1s ;
+			}
+			/*Paragraph*/
+			.paragraph{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				width: 790px;	
+				height: 500px;	
+				border-radius: 50px;
+				background: #ffb833;
+				opacity: 0;
+				box-shadow: 20px 20px 5px rgba(0,0,0, .8);
+				-webkit-user-select: none;
+				
+
+			}
+
+			.paragraph::before{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				width: 790px;	
+				height: 500px;	
+				border-radius: 50px;
+				background:transparent	;
+				opacity: 1;
+				box-shadow: inset -5px -10px 5px rgba(0,0,0, .8);
+				
+			}
+
+			.paragraph:target{
+				opacity: 1;
+
+			}
+
+			.paragraph h1 {
+				position: absolute;
+				left: 20px;
+				top: 20px;
+				font-size: 2.5em;
+				font-family: Metropolis-Black;
+				color: rgba(0, 0, 0, .5);
+				
+
+				
+
+			}
+
+			.paragraph h1:hover{
+				text-decoration: underline;
+				
+			}
+
+			.paragraph .p p{
+				position: absolute;
+				top: 52%;
+				left: 41%;
+				transform: translate(-50%,-50%) ;
+				width: 600px;
+				height: 350px;
+				background: transparent;
+				color: rgba(0, 0, 0, .5);
+				font-size: 25px;
+				text-indent: 20px;
+				text-align: justify;
+				overflow: auto;
+				font-family: Arial, sans-serif;
+				
+			}
+			/*End of Paragraph*/
+
+
+
+
+			.overlay .close {
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				left: 94%;
+				margin-left: -10px;
+				margin-top: 10px;
+				color: rgba(0, 0, 0, .5);
+				text-decoration: none;
+				font-family: Metropolis-Black;
+				font-size: 2.5rem;
+				opacity: 0;
+				transition: .5s;
+
+
+			}
+
+			.overlay .close:active{
+				width: 20px;
+				height: 20px;
+				background: rgba;
+			}
+
+
+
+
+			.overlay:target .close {
+				opacity: 1;
+			}
+
+			.overlay .next{
+				position: absolute;
+				width: 40px;
+				height: 60px;
+				left: 85%;
+				top: 45%;
+				font-size: 4.5em;
+				font-family: Metropolis-Black;
+				text-decoration: none;
+				color: rgba(0, 0, 0, .5);
+
+			}
+
+			.overlay .next:hover{
+				background-color: rgba(0, 0, 0, .1);
+			}
+
+			
+			
+		/*Animation*/
+
+				@keyframes animate{
+			0%{
+				content: 'Do';
+			}
+
+			20%{
+				content: 'you';
+			}
+
+			40%{
+				content: 'like';
+			}
+
+			60%{
+				content: 'to';
+			}
+
+			80%{
+				content: 'eat';
+			}
+
+			100%{
+				content: 'pancake?';
+			}
+		}
+
+		@keyframes fadeajah{
+				0%{
+					opacity: 0;
+				}
+
+				100%{
+					opacity: 1;
+				}
+			}
+
+			/*Scrollbar*/
+					/* width */
+			::-webkit-scrollbar {
+			width: 20px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+			box-shadow: ; 
+			border-radius: 10px;
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+			background: transparent; 
+			border-radius: 10px;
+			box-shadow: ;
+
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+			background: rgba(0, 0, 0, .35); 
+			}
+
+	    /*Navbar*/
+			.navbar{
+			position: fixed;
+			background-color:rgba(0, 0, 0, .25);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 55px;
+			z-index: 3;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.navbar ul li{
+			float: left;
+			text-decoration: none;
+			list-style: none;
+		}
+
+		.btn{
+			margin-left: 30px;
+			margin-right: 25px;
+			transition: ease-out .5s;
+			
+		}
+
+		.btn a{
+			font-size: 2em;
+			font-family: Metropolis-Black;
+			text-decoration: none;
+			color: whitesmoke;
+
+		}
+
+		.satu a{
+			position: relative;
+			color: rgba(0, 0, 0,.5);
+			transition: .5s;
+		}
+
+		.satu a::before{
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .9s;			
+		    color: #fff;
+		}
+
+		.satu a:hover::before{
+			width: 100px;
+		}
+
+		.satu a span{
+			transition: .5s;
+		}
+
+		
+
+
+
+		.dua a{
+			position: relative;
+			color: rgba(0, 0, 0,.5);
+			transition: .5s;
+		}
+
+		.dua a::before{
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .9s;			
+		    color: #fff;
+		}
+
+		.dua a:hover::before{
+			width: 100px;
+		}
+
+		.dua a span{
+			transition: .5s;
+		}
+
+		
+
+
+		.tiga a{
+			position: relative;
+			color: rgba(0, 0, 0,.5);
+			transition: .5s;
+		}
+
+		.tiga a::before{
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .9s;			
+		    color: #fff;
+		}
+
+		.tiga a:hover::before{
+			width: 100px;
+		}
+
+		.tiga a span{
+			transition: .5s;
+		}
+
+		
+
+
+
+		
+
+	</style>
+</head>
+<body>
+
+	<div class="transition transition-1 is-active"></div>
+
+	<div class="container">
+		<div class="navbar">
+			<ul>
+			<li class="btn satu"><a href="index.html" data-text='HoMe'>HoMe</a></li>
+			<li class="btn dua"><a href="#" data-text="Mail">Mail</a></li>
+			<li class="btn tiga"><a href="music.html" data-text='Music'>Music</a></li>
+		</ul>
+		</div>
+		<div class="pancake"></div>
+		<div class="shadow"></div>
+		<a href='https://pngtree.com/so/knife-and-fork-cartoon' class="atribut">knife and fork cartoon png from pngtree.com</a>
+		<div class="plate"><h3>Ciluk baaaa</h3></div>
+		<div class="kofork">
+		<div class="fork"><h1>Eat with fork right?</h1></div>
+	</div>
+		<div class="koknife">
+		<div class="knife"><h1>Or with a knife bro?</h1></div>
+		</div>
+
+		<div class="mail">
+			<h1>Kepo ish ;)</h1>
+			<a href="#ov">
+				<span>Mail</span>
+			</a>
+		</div>
+
+		<div class="overlay" id="ov">
+				<div class="paragraph 1 ">	
+						<h1>あなたがすきです。💕</h1>
+						<div class="p">
+							<p>Tes,tes mik ah udah nyala ya? Oke. Selamat pagi/siang/sore/malam/ atau kapanpun dan dimanapun kamu berada. Potongan surat ini ditunjukkan untuk kamu yang rambutnya panjang. Di lembaran pertama surat ini, aku mau cerita sedikit soal seorang yang aku suka. Dia tegas, berwibawa, jiwa pemimpin, galak, tapi kadang lucu juga. Manis kayak gula, sampai klo liat dia bisa kena diabetes stadium 4.Tidak tertolong. <br><br>
+
+							Dan orang suka itu beda-beda ya. Ada yang bisa ngomong didepan, ada yang pake surat ada yg pesan online, ada yg online shop (ceritanya cintanya dijual), dan masih banya ragam macamnya. Udah mirip bhineka tunggal ika aja. Sedangkan aku sendiri, tipe apa ya? hmm kalau aku yang diem-diem aja gitu, diem-diem baek. Emang paling susah klo mau ngomong, susah komunikasi, pokoknya susah. Pandanganku mungkin beda dengan yang lain, kadang aku juga ingin bisa kayak temenku, Percaya diri banget, kayak nggak pernah minder gitu. Tapi aku nggak bisa, karena bukan pribadi saya. <br><br>
+
+							Yak lanjut ke topik. Suka pertama kali, ketika baru menginjak kelas 7. Entah kenapa kelas 7 itu seperti gaada pengalaman yang berkesan, dan ada sih yang aku suka, tapi dia beda aja gitu, dari yg dikelas 8. Klo bisa dibilang perbedaannya itu kayak bumi dan bulan, akunya asteroid. Kelas 8 itu rasanya fresh segar, meski walinya sama, ya gapapa, yang penting temannya beda. Kelas 8 lebih aktif dan lebih komunikasi. Karena ya faktor teman-teman yang open, terbuka, terima apa aja dan bertemean dengan siapa saja. Sampai suatu saat, aku kayak menemukan sesuatu, sesuatu gitu. Sesuatu yang bikin semangat sekolah naik terus, tiap pagi cuman mau nungguin orang yang bawa tas atau ransel? ahh siapa peduli. Yang penting tasnya tosca, dah selesai aku suka tasnya aja. udah tamat suratnya. Tapi klo orang tanya, tas atau orangnya, aku pilih kursi eh sepatu, orangnya dong masa enggak. <br><br>
+
+							Yah meskipun pada akhirnya cuman bisa pendem dalam-dalam ke tanah sampai gak ketemu lagi. Karena ya itu tadi, nggak percaya diri, masa bulan mau sama yang kayak asteroid. Bulan kan cocoknya sama matahari, sama neptunus, atau sama jupter, kayak mustahil aja gitu bulan sama asteroid. beda levelnya. <br><br>
+
+							Hari demi hari berjalan, rasanya itu tambah nemenn tapi hatinya nggak percaya diri, jadi mending ga usah, cukup simpan aja di saku dan,, gausah ditanggapi. Saat itu aku gak tahu feelnya dia gimana terhadap kecanggungan yang nggak pernah berhenti. Pas jam pelajaran matematika, bahasa inggris, cuman bisa curi pandang aja, susah mau ngomong apa, seperti aku harus nyusun satu teks pidato dulu baru bisa bicara. Itu ya klo abis curi pandang, langsung bisa bahasa jerman, prancis, belgia, bahasa dunia pun keknya bisa tuh, saking sakralnya parasnya itu. Orang klo suka pasti berusaha kan?, tapi keknya beda sama saya, yang cuman bisa nambaang tiap hari, klo rasa itu ada pendam aja dalam-dalam, mengharap biar gaada lagi, tapi tetep gabisa, karena yang bicara perasaan bukan tubuh. Ato aku coba pake bhasa isyarat kali ya, biar gak gugup hehe. Oke cukup sekian untuk paragraf absurdnya, mungkin kamu bisa pahami sambil dibaca terbalik, ya ʞılɐqɹǝʇ, <br><br>
+
+							Tambahan, Cikal bakal website ini berasal dari ide absurd, Aku gk tahu kenapa, kayak pikiranku jalan sendiri. Pas itu aku mikir"hmm..klo suratnya tertunda gimana ya..? Apa klo ketemuan kasi code qr aja?, atau sapa aja. Banyak bet pikiran kreatif yang langsung muncul dari kepala. Tapi saking banyaknya jadi males, males bikin. Soalnya lek aku mikir aja disimpan di kepala, itu dah selesai. Aduh gimana ya jelasinnya. Misal gini deh, kamu lagi mikir sebuah cerpen, nanti mau nulis apa, temanya apa, plotnya gimana. Kamu pikirin terus dikepala, sampai-sampai ceritanya tuh abisnya di kepala aja, dan nggak kamu wujudin ke dunia nyata karena selesainya dikepala. Klo aku kek gitu, jadi yg dilakukan adalah, aku gaboleh mikir mau bikin apa, tapi yang jelas aku pengen kasih sesuatu ke kamu, gitu aja. Karena pas itu kehabisan ide, ya aku explore lah apa yang  bisa dikasih, dan itu gratis hehe. <br><br>
+
+							Terus aku liat kakakku lagi belajar html, bikin website, jadi tertarik gitu. Lalu muncullah ide"Gimana klo bikin website aja(Meski saat itu masih belum tahu apa-apa tentang website)" Semakin terdesak idenya makin gila wkwk. Halaman pertama website ini terinspirasi dari pikiranku sendiri, juga halaman kedua ini aku yang buatin hehe, klo halaman ke 3 terinspirasi dari suatu film nih, pasti kamu pernah nonton. Filmnya itu namanya Galih & Ratna, keren bet filmnya, apalagi temanya kayak ngambil retro, keren abis pokoknya. Nah pas di scene Galih bikin rekaman lagu, untuk dikasih ke Ratna, aku tanya ke my parents "Ma itu apa?" "Mixtape" katanya sih isi mixtape itu,kayak melambangkan perasaan si yang bikin mixtape itu. Terus kepikiran jadi pengen bikin mixtape aja gitu. Tapi setelah research, ternyata mixtape sama aja kayak playlist lagu. Dan satu lagi ada hal lucu yang aku temukan di internet, terkait tentang seorang cowok, yang mau nembak pacarnya pake playslit spotify. ditolak dong. Sempet ketawa bentar, dan nggak jadi bikin playlist. Lalu cari apakah music player bisa dibikin ?, wah ternyata bisa tuh, pake html,css,js. Tapi sayangnya aku belum bisa javascript, jadi copy punya oranag hehe, tapi desainnya aku pengen rubah dikit, biar ga terlalu monoton lah istilahnya. Semoga kamu suka ya wkwk.<br><br>
+
+							Aku gak tahu tanggapanmu gimana, yang penting kamu suka hwhehewkek. Sori klo banyak typonya~😝 <br><br>
+
+							</p> 
+
+						</div>
+						
+						<a href="#paragraph-2" class="next"> > </a>
+
+				</div>
+
+			</div>
+
+			<div class="overlay" id="paragraph-2" id="paragraph-2">
+				<div class="paragraph 2" id="paragraph-2">	
+						<h1>从什么时候消失的？🤔</h1>
+						<div class="p">
+							<p>Suratnya ketinggalan hehe-->  LDR singkatan dari ( Long Distance Relationship ). Yak perihal itu juga yang sedang Aku jalani. Hmmm kira kira sudah berapa hari ya? ah gatau sehari mungkin, ( mungkin). Jujur dari LDR ini kadang aku sering merasa cemas, iri,dengki, dan rasa campur aduk lainnya yang gak bakal bisa dijelasin pake alfabet. Diawal komunikasi masih baik, masih saling chat chat tan, kadang bikin orang senang,ketawa, mesam mesem. Namanya juga percintaan remaja, hadehh ku masih belum tahu apa-apa dalam suatu percintaan. <br><br>
+Dan.. itu yg bikin aku seneng dan sanggup jalani hari yang sedang dalam kesengsaraan ini. Perlahan mulai hilang radar radar yang tadinya saling bercerita masa lalunya, menepi sejenak merenung dalam diam tanpa kata. Hmmm ya itu kadang bikin aku bingung, apakah dia masih ada, karena jelas jelas ada suatu jarak paling sekitar 1m, keknya lebih. Hilang seketika. Tapi aku tetap sabar, biarpun kadang dia muncul lalu tenggelam lagi, ibaratkan teh celup sariwangi yg seribuan,. Awalnya sering terucap manis dari suatu kata hingga membentuk kalimat. Yang bisa buat seorang memunculkan tawa manisnya. Namun juga ada masa dimana aku mengucap salah satu kata yang sebenarnya belum tentu terjadi. Malah kebenerannya Ku hanya bisa berjalan diantara halusinansi, berputar dalam roda-roda mimpi yang tidak pasti. <br><br>
+ Suasana memang, kadang membuat seorang sepertiku jatuh atau kita? emmm ? suasana dapat berubah tiap detik? menit? yang pasti bisa bikin orang naik turun mood. Mood bisa terselesaikan dengan aktivitas lainnya, seperti mendengarkan lagu, tidur sejenak, kurangi konsums kafein, mengurangi alkohol, atau yang lainnya yang bisa buat hati kita seneng. Nah setelah itu kamu kembali lagi, semu. Dan kubertanya pada semen semen bangunan yang belum sempat diaduk. Wahai semen apakah benar dalam suatu hubungan harus ada yang namanya saling ... ( semennya diaduk makanya berhenti nanya. <br><br>
+Ternyata enak ya, kalau tiap hari gausah tiap hari tiap senin diperhatiin gitu, ada rasa rasa tersendiri yang pastinya bukan masako, rasanya itu seperti berada diatas awan lalu disinari aurora yang menari nari dipagi hari, apalagi melihat senyummu meski dalam aplikasi. Serta merayu melati saat pengen iseng ha ha ha ha... . Tapi jujur kalau dalam aplikasi itu ga terasa apa apa. Ada sih sedikit tapi lebih asik kalau liatin Seorang Ketua kelas galak galakin temennya, Galak tapi sayang,emang marahnya itu WAW sekali macam kak ros, ish ish ish Tapi kadang marahnya itu bisa bikin orang ngakak gak ketulungan, karna yang tulung suka makan menyan. Rasanya itu segitunyaaa. pengen meninggal tapi maaf ini bukan review makanan selebgram. <br><br>
+Suaranya, gimana gitu ya gimana? ya gitu. Nyaman didengar, tapi kalau teriak gendang telinga terbakar. whoshhhhh. And.. gampang ketawa, Misal Gagak airline kalau terbang bunyinya ngoakk ngoakk . Besoknya paling Bebek Airline kalau terbang bunyinya quek quek. Sangat wajar bila saya seorang manusia berinovasi pengen ketemuan, eh tapi ketemuan malah diam seribu kata, nggak bisa ngomong, bisu kali, hmm kenapa ya, aku kayak susah banget gitu klo mau ngomong, bulan aja bisa ngomong, tapi aku nggak bisa. Jadi inget satu lagu, "Kalau bulan bisa ngomong, dia pasti tak akan bohong". Yah mungkin bagian prolog bagus bett yaa. Sayang sekali bagian epilognya kayak telepati kata kita . "Wah sesuk sesuk kudu sinau telepati iki lek ngene kuwi" besoknya malah beneran. Menurut catatan sutasoma yang direvisi dan diremix, kalau sekarang suasananya kek beda different, kayak jarak antara matahari dan bumi segitunyaa! ( Maaf tadi selebgram lewat,) Sudah kucoba Plan A, yah masih ada balasannya sih cuman ya gitu, anda ketawa lama bet dari jam 9 pagi ampe jam 9 malam Hiperaktif sekali. Lama lama kesel juga,cuman ya sudah usaha bung. Hmmm keknya itu gak keitung usaha. Paling masuk PT. Makanya sekarang ku diemin, tapi malah saya yang aneh wes angel, haiyaaa. Malah aku yang mo ngomong cuman ngomong apa? comment dibawah..
+Telepon, kadang kalau mo telepon udah wow sendiri sok asik sendiri makanya gak jadi, hadehhh bingung lah intinya, mungkin kapan kapan ato besok? gausah gausah. Vn aj, hehe. Voice call? keknya udah pernah eh? gak tapi seingetku ada nih seorang cewek dia minta diajarin bikin zoom, bikin room istilahnya. Pertama aku gak gahu apa apa yaudah ajari aja, terus minta ngetes wah WAH dig dag dug deg dor, dredeg saia, soalnya nih cewek aku suka . Garing bet pas itu isinya cuman senyam senyum ....;)<br><br>
+Intinya dalam barisan kalimat yg ini aku cuman mau minta maaf, maaf aku sering cuekin kamu, maaf aku menghiraukan kamu bak angin, maaf kadang bikin kamu sedih alias badmood, dan maaf aku diemin kamu, mungkin ini sudah maaf yang keberapa sejak... gatau? <br><br>
+Cuek, kadang aku cuekin ku ada yang sebab dan ada yang tanpa sebab. Dan 100% yang tanpa sebab karna sebel sama kamu, sedangkan yang sebab ya karena ada sesuatu yang harus diurusi dahulu . Level paling susah melebihi game rpg bintang lima adalah ketika Kamu lagi badmood, anda harus memutar otak anda ato saltokan otak anda. Ini cewek Badmood kenapa? the core is you have to "peka". Kalau tidak sudah itu awan mendung turun hujan terus gabalik lagi. 
+Baiknya adalah Aku bisa memperluas pengetahuan tentang badmood. nicel. Ada masa dimana aku merasa gak selevel jadi gini simpelnya, anda pernah belajar sejarah? nah pasti anda tahu sistem kasta, aku itu paling gak nyaman kalau disuruh temenan sama orang yang punya kelompok, gasuka banget. Bencinya tuh setengah mati, makanya disekul aku temenan sama anak anak yang biasa biasa saja, atau yang tidak punya kehidupan berkelompok, ato elit. hahaah udh kayak cyberpunk elite sekali. Makanya kadang kalau bisa biasanya tak jauhin mlz saia. Tapi . ... keknya aku harus bisa ngadepin arghh... gatau lagi, angel wes angel. Dan terakhir kene tak tambahi. Kula iki duduk dukun raiso ngerti feel kamu, jangan heran karena emang kalau anda bisa baca pikiran saya anda sudah jadi psikologi tingkat dewa, atau melebihi dewa Yunani hahaha . ha 
+<br><br>	
+Kalau aku bisanya peka aja, hadeh susah klo kamu suruh aku nebak
+yah mungkin segitu dulu
+bye,
+
+.,, xrvfun
+                                                                    </p>
+
+
+						</div>
+						
+						<a href="#paragraph-3" class="next"> > </a>
+				</div>
+
+			</div>
+
+			<div class="overlay" id="paragraph-3" id="paragraph-3">
+				<div class="paragraph 3" id="paragraph-3">	
+						<h1>Nxuve qnev prevgn😴</h1>
+						<div class="p">
+							<p>Part 3
+Oke, bisa dibilang ini part ke 3 dari kotak surat. Aneh belum ada apa2 udh part ke 3 aja. Berdiri saya disini bukan untuk merekap film,membuat konten gaje,menggema, ataupun menganga. Hadirnya saya dalam surat ini, hanya ingin memeberitahu keluh kesa h saya menanggapi...tamu rasa yang baru datang udah menusuk hingga ke rahang sukma(Payung teduh). Mungkin sekilas anda hanya bisa melihat tulisan random, yg sebenarnya menghadirkan makna. <br><br>
+
+Dari yang saya pahami dan resapi galau atau bisa dibilang rasa masako(asin kawan) memiliki beberapa kesamaan dengan metamorfosis. Kenapa? karena menurut saya org galau itu kayak ada fase-fase utk melepas dan melupakan si kampret yg ninggalin dia ataupun sebaliknya. (Saya mah golongan si kampret ini). Hanya opini jangan dibawa ke hati, karena hati klo malu bisa nyangkut di pankreas. Fase pertama dimulai dengan "refleksi" bukan tugas dari si kejam, bukan pula efek rumah kaca. Refleksi yg dimaksud adalah "5w+1h" anjas udh kayak wartawan aja nying. "Apa, Siapa, Mengapa, Dimana, Kapan, dan bagaimana". Pertanyaan2 itu datang seiring dengan jalannya pikiran saya. Misal nih cuci piring,(dapur saya full acoustic;) saya bertanya2 <br><br>
+
+sfx: sesuatu di jogja <br><br>
+
+ Hmm..... Eh?...Hmmmm...Bentar2....
+KOK BISA?...Oh gitu......Ehmmm.....Kayakknyaa...Ah...gpp. (klo mau lanjut habis halaman saya) gitu. nanya ke diri sendiri untung masi waras kawan. Nanya tentang apa yg buat kita ini broke up, hal sesepele apa yg bikin broke. Bisa jadi, mobil bapak belum ganti oli. Siapatahu kan.
+Itu pertanyaan semuanya, bakal kebawa pas tidur, yg terkadang bikin orang kepikiran, dan terbawa rayuan MIMPI ingat cuma mimpi.
+(disitulah kehidupan isekai delusi kalian diaktifkan, setelah bertaun2 ga dipake.
+setelah merefleksikan diri, LANJUT KE FASE DUA.  ADA BRP FASE DAH?? <br><br>
+
+Fase kedua adalah, mulai mendengarkan lagu mellow, marsmellow, or anythink yg berhubungan dengan sedih, perih, luka, YA PAKE BWTADINE LAH masa nangis mulu kerjaannya. Lagu memanglah asik, dan relate dengan kondisi saat itu. Memang bagus utk mengenang apalah itu. Tapi terkadang kita terlalu larut dalam kesunyian perih luka malam yang dingin. Terlalu sedih, seakan dunia akan hancur dan kita boro2 nyari kepler(sebutan planet yg mirip bumi) dan jadi bosen hidup. Cucian terlantar, lantai kotor, baju bau, dan tentunya air mata anda harus refill lagi di indimaret. Saya juga jujur seperti ini kawan. Padahal saya yg kampret, saya yg nangis so bizzare. Pas cuci piring denger lagu hindia, ampe kuping mau pecah rasanya, darah naik turun tapi bukan jungkat jungkit, jantung deg-deg kan padahal bukan pengumuman kelulusan. Yah gitu, tapi jan sampe saking galaunya anda, anda tidak kerja apa2 seharian chat wa sama temen, tetaplah bantu ortu kawan, atau lakukan aktifitas yg lain seprti cover lagu eh salah sama aja anying sedih bawaaanya, seperti main game, bantu2, beres2 rumah, ataupun pandengin waifu 1 jam. its pery pery okay kawan. Bikin puisi sama cerpen, yapi biasanya klo bikin begituan habis broke, bawaanya ke sedih lagi cuy. <br><br> 
+
+Fasek tiga. hal yg berkaitan dengan status 30s, yg dikirim oleh ex anda, dan harus anda pahami dan resapi agar bisa menjadi orang baek. 30s utk memahami, bagi saya kurang. Makanya bikin aplikasi giyu kek. wkw eh gaada lah beginian {ngakak online} dah gini aja biar paham. Status menentukan seberapa rindu kamu dengan dia. Apakah 20 persen, 99.1 persen, atau 100 persen anda harus lupakan dia dan mengharap kembali. Itu sama aja kayak antum punya barang nih, barusan dibeli. Trus antum jual tuh barangnya. Nah gatau kenapa nih pas itu antum kepikiran barang bagus itu, antum mau ambil lagi ya antum harus bayarlah gabisa gratis lah mana ada barang gratisan, wong nikah masi harus lunasin paslon anyink berabe. Biasanya status WA klo gk cover lagu, copas link video quote2 galau. Jadi anda jangan sok bijak mohon maaf nieh. Soalnya kata ge pamungkas(seorang komedian), orang galau banyak yg sok bijak. Entah kenapa setelah dia galau dia menjak(mendadak bijak) gaada angin, gaada udara tiba2 pinter. Memang sih quote berguna, tapi y jan berlebihan lah, minim kirim lagu aku dah suka, eh kok malah aku yang mau? <br><br>
+
+Ni jari keriting lama-lama nulis pesan tak berkesan. Bisa berupa banyak gimick, seperti saya yg sok bijak dengan cara share cerpen dan puisi yg sifatnya lumayan bijak hahaha, menjak menjak. Saat itu saya menjadi orang spesial, iya spesial ayam bakar cakalang ada tuh satu porsi langsung kenyang (ergh......~suara sendawa). Tapi belajar dari the Journey of Elaina, Majo no tabi2 at, dia berkata bahwa "Jangan menganggap dirimu spesial , kayak aku jaga Andrew dengan diabetasol(iklan diabetasol, cari di yutub klo gak percaya. Nah hari-hati nih suratnya banyak menjaknya(menjak,menjak) banyak atuh hwii. )<br><br>
+
+Nah last nih, last, terakhir maksudnya. Ini dia quotestestes dibawakan oleh guest star kita, MAI...KELLLL.
+<br><br>
+Mekel: "Iya..ya terimakasih, terimakasih untuk semuanya yang sudah datang hari ini, "<br>
+MC: "Ehmm... Silahkan tuan quotesnya dibacakan, tolong cepat, saya nak makan ayam goreng ni, betul,betul,betul  <br>
+Mekel:"Ah oke, oke, silahkan para hadirin duduk" <br>
+Mekel: "Watch and learn kudasai, MITE KURE"   <br>
+Mekel: Quotenya adalah....  <br>
+(Mekel membasuh dahinya, keringat tak hentinya bercucuran sodara2)  <br>
+Mekel: "(Kata dalam hati, Deg..deg..duar..ehh nani, kenpa quotesnya seperti ini, ah daijobu, aku harus membacanya, apapun caranya)"  <br>
+Mekel: Jadi quotesnya adalah.....  <br>
+(Drum orkestra tak henti-hentinya ditabuh...den.den.den.dum.tak.dus.tak.dus)  <br>
+(Mekel terlihat sedang joget sodara-sodara)  <br>
+Mekel: "Yang tadinya dikejar sekarang mengejar" "yang tadinya mengejar sekarang dikejar, sekian"  <br>
+Orang tak diketahui namanya: " LOh pak berarti main kucing-kucingan ya"  <br>
+Mekel: "YA, benar saya suka kucing"  <br>
+Orang tak ditahui namanya: "Mana kucingnya pak"  <br>
+Mekel: "Dihatimu ~💖  <br>
+(Mekel mulai bergaya seprti idol sodara2)  <br>
+(Penonton mulai memesan makanan)  <br>
+Orang yang tak diketahui:"Mohon maaf pak, saya cowok"  <br>
+Mekel: dalam hati"anyink"
+(Mekel mulai memegang kepalanya sodara2 apakah ini tanda-tanda kalimat bijak selanjutnya?)  <br>
+
+sekian, dan klo mau tahu tulisan xrufvn itu artinya apa, itu caesar chiper key=13, cari aja di <span> <a href="https://www.dcode.fr/caesar-cipher">Internet</a> </span> banyak</p>  <br>
+						</div>
+						<a href="#" class="close">x</a>
+				</div>
+
+			</div>
+
+
+			
+
+
+		<div class="text"><h2  contenteditable="true"><span></span></h2></div>
+	</div>
+<script src="../js/transition.js"></script>
+</body>
+</html>

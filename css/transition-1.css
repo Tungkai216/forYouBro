@@ -1,0 +1,60 @@
+.transition-1{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
+	background-color: #ffb833;
+	opacity: 0;
+	pointer-events: none;
+	transition: 1s;
+}
+
+.transition-1.is-active{
+	opacity: 1;
+	pointer-events: all;
+}
+
+.transition-2{
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 100% ;
+	bottom: 0;
+	z-index: 101;
+	background: rgba(255, 255, 255, .9);
+	pointer-events: none;
+	transition: 1s ;
+	
+}
+
+.transition-2.is-active{
+	left: 0%;
+	
+
+	
+	
+}
+
+.transition-3{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
+	background-color: violet;
+	border-radius: 50px;
+	pointer-events: none;
+	transition: 1.5s;
+	transform: scale(0);
+	
+}
+
+.transition-3.is-active{
+	transform: scale(1);
+	
+	
+	
+}

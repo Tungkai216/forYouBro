@@ -1,0 +1,512 @@
+*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+		}
+
+		/*Body, Font-face, and Container*/
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background-image: linear-gradient(to bottom, #ffb833 57%,  #ffaf1a 50%);
+		}
+
+		@font-face{
+	font-family: "Metropolis-Black";
+	src: url(Metropolis-Black.otf)format('opentype');
+}
+
+		.container{
+			position: fixed;
+			width: 500px;
+			height: 500px;
+			background-color: transparent;
+			border-radius: 50%;
+			
+
+
+		}
+
+		/*End of Body, Font-face, and Container */
+
+
+
+
+
+
+
+		/*Pancake & Shadow*/
+
+		
+		.pancake{
+			width: 300px;
+			height: 300px;
+			background-image: url(img/img5.png);
+			background-size: cover;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) ;
+			z-index: 2;
+			transition: .5s;
+			
+			
+		}
+
+		.pancake:active{
+			transform: translate(-50%,-50%) rotate(-65deg); 
+			margin-left: -150px;
+
+			
+		}
+
+
+		
+
+		.shadow{
+			position: absolute;
+			width: 280px;
+			height: 280px;
+			background-image: url(img/img5.png);
+			background-size: cover;
+			filter: brightness(0) opacity(40%);
+			top: 50%;
+			left: 80%;
+			margin-left: -45px;
+			transform: translate(-50%,-50%)  skew(-5deg) ;
+			z-index: 1;
+			transition: .5s;
+
+		}
+
+		/*End of Pancake & Shadow*/
+
+
+		/*Plate*/
+		
+		.plate{
+			position: absolute;
+			width: 350px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: white;
+			top: 50%;
+			left: 50%;
+			margin-top: 70px;
+			transform: translate(-50%, -50%);
+			box-shadow: 30px 10px 5px  rgba(0, 0, 0, .8) ;
+			z-index: 1;
+			text-align: center;
+			line-height: 100px;
+
+
+		}
+
+		.plate::before{
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+			border-radius: 50%;
+			background: linear-gradient(to left, #f9f9f9, rgba(0,0,0,.1));
+			transform: rotate(180deg);
+			
+			
+		}
+
+		.plate::after{
+			content: '';
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			right: 30px;
+			bottom: 30px;
+			background: radial radial-gradient(rgba(0,0,0,.9) 25%, transparent);
+		}
+		/*End of Plate*/
+
+
+
+		/*Mail*/
+		.mail{
+			position: absolute;
+			width: 150px;
+			height: 100px;
+			background: linear-gradient(to right, #f9f9f9 95% , rgba(0,0,0, .8) );
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) perspective(10px) rotateX(1deg)  ;
+			margin-top: 200px;
+			z-index: 3;
+			transition: .5s;
+			font-family: sans-serif;
+			box-shadow: 5px 0px 5px rgba(0, 0, 0, .8);
+			display: flex;
+			align-items: flex;
+			justify-content: center;
+
+		}
+
+		.mail:hover{
+			box-shadow: 15px 25px 5px rgba(0, 0, 0, .8);
+			transform: scale(1.5) translateX(-50px) translateY(-40px);
+
+
+
+		}
+
+		.mail a span{
+			position: absolute;
+			top: 50%;
+			left: 50%;	
+			transform: translate(-50%,-50%);
+			font-family: Metropolis-Black;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+			text-decoration: none;
+			color: black;
+		}
+
+		.mail:active span{
+			color: 	#ffb833;
+		}
+
+		.mail h1{
+			font-size: 12px;
+			font-family: inherit;
+			opacity: 1;
+			z-index: 2;
+			margin-top: 75px;
+			opacity: 0;
+			transition: .5s ;
+		}
+
+		.mail:hover h1{
+			opacity: 1;
+		}
+		/*End of Mail*/
+
+
+
+
+
+		/*Fork*/
+		.fork{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%)  perspective(10px) rotateX(5deg) ;
+			width: 30px;
+			height: 100.5px;
+			background-image: url(img/forksss.png);
+			background-color: transparent;
+			background-size: cover;
+			filter: drop-shadow(10px 0px 5px rgba(0,0,0,.8) );
+			margin-left: -200px;
+			margin-top: 180px;
+			z-index: 3;
+			transition:  .5s;
+  			
+
+		}
+
+		.fork:hover{
+			transform: scale(2) rotate(-15deg);
+			 
+		}
+
+		.fork:hover h1{
+			opacity: 1;
+		}
+
+		.fork h1{
+			font-size: 12px;
+			z-index: 2;
+			text-align: left;
+			margin-left: -70px;
+			opacity: 0;
+			transition: 0.35s;
+		}
+		/*End of Fork*/
+
+
+
+
+		/*Knife*/
+		.knife{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%)  perspective(10px) rotateX(5deg) ;
+			width: 30px;
+			height: 100.5px;
+			background-image: url(img/knifesss.png);
+			background-color: transparent;
+			background-size: cover;
+			filter: drop-shadow(10px 0px 5px rgba(0,0,0,.8) );
+			margin-left: 200px;
+			margin-top: 180px;
+			z-index: 3;
+			transition:  .5s;
+		}
+
+		.knife:hover{
+			transform: scale(2) rotate(15deg) ;
+
+		}
+
+		.knife:hover h1{
+			opacity: 1;
+		}
+
+		.knife h1{
+			font-size: 12px;
+			z-index: 2;
+			text-align: left;
+			margin-right: -70px;
+			transform: translatex(30px);
+			opacity: 0;
+			transition: 0.35s;
+		}
+		/*End of Knife*/
+
+
+
+		/*Link image of Fork & Knife*/
+		.atribut{
+			position: absolute;
+			left: 1112%;
+		}
+		/*End of Link*/
+
+
+
+
+		/*Text*/
+		.text{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 7em;
+			transition: .5s;
+			color: rgba(0, 0, 0, .1);
+			text-transform: uppercase;
+			margin-top: -1px;
+			font-family: Metropolis-Black;
+			
+
+		}
+
+		.text h2 .span{
+			font-size: 100px;
+			z-index: 1;
+
+
+		}
+
+		h2{
+			outline: none;
+		}
+
+		.text span::before{
+			content: '';
+			animation: animate infinite 7s;
+
+		}
+		/*End of Text*/
+
+
+
+
+
+		
+		/*Overlay*/
+			.overlay{
+				width: auto;	
+				height: auto;	
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0, 0, 0,0);
+				z-index: 10;
+				color: 	coral;
+				transition: .5s;
+
+			}
+
+			.overlay:target{
+				width: auto;	
+				height: auto;	
+				bottom: 0;
+				right: 0;
+				background-color: rgba(	 0, 0, 0, .8);
+			}
+
+			.overlay:target .mail a span{
+				animation: fadeajah 1s;
+			}
+
+			.overlay .paragraph{
+					max-height: 100%;
+
+			}
+
+			
+
+			.overlay:target .paragraph{
+				animation: fadeajah 1s forwards;
+			}
+
+			.overlay:target .close {
+				animation: fadeajah 1s ;
+			}
+			/*Paragraph*/
+			.paragraph{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				width: 790px;	
+				height: 500px;	
+				border-radius: 50px;
+				background: #ffb833;
+				opacity: 0;
+				box-shadow: 15px 15px 15px rgba(0,0,0, .8);
+
+
+
+
+			}
+
+			.paragraph:target{
+				opacity: 1;
+
+			}
+			/*End of Paragraph*/
+
+
+
+
+			.overlay .close {
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				left: 95%;
+				margin-left: -10px;
+				margin-top: 10px;
+				color: rgba(0, 0, 0, .5);
+				text-decoration: none;
+				font-family: Metropolis-Black;
+				font-size: 2.5rem;
+				opacity: 0;
+				transition: .5s;
+
+
+			}
+
+			.overlay .close:active{
+				width: 20px;
+				height: 20px;
+				background: rgba;
+			}
+
+
+
+
+			.overlay:target .close {
+				opacity: 1;
+			}
+			
+		/*Animation*/
+
+				@keyframes animate{
+			0%{
+				content: 'Do';
+			}
+
+			20%{
+				content: 'you';
+			}
+
+			40%{
+				content: 'like';
+			}
+
+			60%{
+				content: 'to';
+			}
+
+			80%{
+				content: 'eat';
+			}
+
+			100%{
+				content: 'pancake?';
+			}
+		}
+
+		@keyframes fadeajah{
+				0%{
+					opacity: 0;
+				}
+
+				100%{
+					opacity: 1;
+				}
+			}
+
+			/*Navbar*/
+
+.navbar{
+	position: fixed;
+	background-color: #4f4e4e;
+	width: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 55px;
+	z-index: 6;
+}
+
+.li{
+	width: 500px;
+	background-color:#4f4e4e;
+	text-align: right;
+	margin-left: 60%;
+
+}
+
+.navbar ul li{
+	display: inline-block;
+	margin-top: 18px;
+	margin-right: 20px;
+}
+
+.navbar a{
+	color: white;
+	text-decoration: none;
+	font-family: Metropolis-Black, arial;
+	margin-left: 45px;
+	font-size: 25px;
+	transition: .5s ;
+
+}
+
+.navbar a:hover{
+	background-color: lightgreen;
+	border-radius: 50px;
+	box-sizing: border-box;
+	padding: 5px;
+
+}
+
+.navbar a:active{
+	color: #fff;
+}
