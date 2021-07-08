@@ -1,7 +1,7 @@
 
 var lagi = true
 var alerted = localStorage.getItem('alerted') || '';
-    if (alerted != 'f') {
+    if (alerted != 'h') {
 
      while (lagi === true) {
   var nama = prompt('Tak kenal maka tak sayang\n(Isi nama ishh)');
@@ -16,6 +16,6 @@ var alerted = localStorage.getItem('alerted') || '';
 alert('Enjoy this web ' + nama);
 alert('And one thing miss you xrvfun');
 
-     localStorage.setItem('alerted','f');
+     localStorage.setItem('alerted','h');
     }
 
