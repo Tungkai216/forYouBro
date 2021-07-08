@@ -233,13 +233,13 @@ input[type="range"]::-webkit-slider-thumb{
 .right #quote{
 	position: absolute;
 	top: 140px;
-	left: -5%;
+	left: 50%;
 	transform: translateX(-50%);
 	text-transform: none;
 	color: #fff;
 	font-size: 20px;
 	opacity: 0;
-	animation: quote 5s 60s  forwards;
+	animation: quote 15s 60s infinite alternate ;  
 }
 
 .right .duration{
@@ -468,19 +468,14 @@ input[type="range"]::-webkit-slider-thumb{
 
 
 @keyframes quote{
-	0%{
-		transform: translateX(30px);
+	from{
+		
 		opacity: 0;
 	}
 
-	50%{
-		transform: translateX(200px);
+	to{
+		
 		opacity: 1;
-
-	}
-
-	100%{
-		transform: translate(300px,0px);
 	}
 }			
 
